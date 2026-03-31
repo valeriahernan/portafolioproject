@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+<rect width="100%" height="100%" rx="24" fill="#fff6fb"/>
+<path d="M200 245 C195 205 202 166 208 118" stroke="#4a9f54" stroke-width="8" fill="none"/>
+<path d="M210 178 C238 160 262 165 278 182" stroke="#4a9f54" stroke-width="6" fill="none"/>
+<g transform="translate(145 42)">
+  <circle cx="55" cy="55" r="28" fill="#d63384"/>
+  <circle cx="83" cy="55" r="26" fill="#e0569a"/>
+  <circle cx="70" cy="32" r="26" fill="#f062a1"/>
+  <circle cx="70" cy="80" r="26" fill="#f062a1"/>
+  <circle cx="46" cy="78" r="24" fill="#e14f94"/>
+  <circle cx="92" cy="78" r="22" fill="#e14f94"/>
+  <circle cx="70" cy="55" r="20" fill="#ffdf6b"/>
+</g>
+<text x="24" y="278" font-family="Segoe UI, Arial" font-size="24" fill="#c63b83" font-weight="700">Rosas Rojas</text>
+</svg>

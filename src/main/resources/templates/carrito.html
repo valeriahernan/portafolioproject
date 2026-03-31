@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito | Florería Valeria</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body class="bg-soft">
+<nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-pink" th:href="@{/catalogo}">🌸 Florería Valeria</a>
+        <div class="d-flex gap-2">
+            <a class="btn btn-outline-secondary rounded-pill" th:href="@{/catalogo}">Seguir comprando</a>
+            <a class="btn btn-outline-secondary rounded-pill" th:href="@{/admin}">Admin</a>
+        </div>
+    </div>
+</nav>
+
+<main class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+        <div>
+            <h1 class="h3 fw-bold mb-1">Tu carrito</h1>
+            <p class="text-muted mb-0">Actualiza cantidades y revisa tu total antes de finalizar.</p>
+        </div>
+        <a th:href="@{/carrito/vaciar}" class="btn btn-outline-danger rounded-pill" onclick="return confirm('¿Vaciar el carrito completo?')">Vaciar carrito</a>
+    </div>
+
+    <div th:if="${success}" class="alert alert-success rounded-4 shadow-sm" th:text="${success}"></div>
+    <div th:if="${error}" class="alert alert-danger rounded-4 shadow-sm" th:text="${error}"></div>
+
+    <div class="card border-0 shadow-sm rounded-4" th:if="${!#lists.isEmpty(items)}">
+        <div class="card-body p-4">
+            <div class="table-responsive">
+                <table class="table align-middle">
+                    <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Subtotal</th>
+                        <th class="text-end">Acción</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="item : ${items}">
+                        <td>
+                            <div class="d-flex align-items-center gap-3">
+                                <img th:src="@{${item.imagen}}" th:alt="${item.nombre}" class="admin-thumb rounded-3">
+                                <div>
+                                    <div class="fw-semibold" th:text="${item.nombre}"></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td th:text="'$' + ${#numbers.formatDecimal(item.precio, 0, 'POINT', 0, 'COMMA')}"></td>
+                        <td>
+                            <form th:action="@{'/carrito/actualizar/' + ${item.productoId}}" method="post" class="d-flex gap-2 align-items-center">
+                                <input type="number" name="cantidad" min="1" th:value="${item.cantidad}" class="form-control form-control-sm quantity-input">
+                                <button class="btn btn-sm btn-outline-dark rounded-pill" type="submit">Actualizar</button>
+                            </form>
+                        </td>
+                        <td class="fw-semibold" th:text="'$' + ${#numbers.formatDecimal(item.subtotal, 0, 'POINT', 0, 'COMMA')}"></td>
+                        <td class="text-end">
+                            <a class="btn btn-sm btn-outline-danger rounded-pill" th:href="@{'/carrito/eliminar/' + ${item.productoId}}">Eliminar</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="d-flex justify-content-end mt-4">
+                <div class="cart-total-box rounded-4 p-4">
+                    <div class="text-muted small">Total del carrito</div>
+                    <div class="display-6 fw-bold" th:text="'$' + ${#numbers.formatDecimal(total, 0, 'POINT', 0, 'COMMA')}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card border-0 shadow-sm rounded-4" th:if="${#lists.isEmpty(items)}">
+        <div class="card-body p-5 text-center">
+            <img th:src="@{/images/carrito-vacio.svg}" alt="Carrito vacío" class="empty-cart-img mb-3">
+            <h2 class="h4 fw-bold">Tu carrito está vacío</h2>
+            <p class="text-muted">Agrega flores desde el catálogo para comenzar tu compra.</p>
+            <a th:href="@{/catalogo}" class="btn btn-pink rounded-pill">Ir al catálogo</a>
+        </div>
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/js/scripts.js}"></script>
+</body>
+</html>

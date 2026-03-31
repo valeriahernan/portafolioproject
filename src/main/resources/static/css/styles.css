@@ -1,0 +1,86 @@
+:root{
+    --pink:#d63384;
+    --pink-dark:#b52c70;
+    --soft:#fff6fb;
+    --text:#2f2b3a;
+}
+
+body{
+    color:var(--text);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bg-soft{
+    background: linear-gradient(180deg, #fffafc 0%, #fff3f8 100%);
+}
+
+.text-pink{
+    color:var(--pink)!important;
+}
+
+.btn-pink{
+    background-color:var(--pink);
+    border-color:var(--pink);
+    color:#fff;
+}
+
+.btn-pink:hover{
+    background-color:var(--pink-dark);
+    border-color:var(--pink-dark);
+    color:#fff;
+}
+
+.hero-section{
+    background:
+        radial-gradient(circle at top right, rgba(214,51,132,.12), transparent 35%),
+        radial-gradient(circle at bottom left, rgba(255,193,7,.14), transparent 30%);
+}
+
+.hero-illustration{
+    max-height: 330px;
+}
+
+.product-card{
+    overflow:hidden;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.product-card:hover{
+    transform: translateY(-6px);
+    box-shadow:0 1rem 2rem rgba(31, 33, 41, .08)!important;
+}
+
+.product-image{
+    height:220px;
+    object-fit:cover;
+    background:#fff;
+    padding:1rem;
+}
+
+.admin-thumb{
+    width:64px;
+    height:64px;
+    object-fit:cover;
+    background:#fff;
+    padding:.35rem;
+    border:1px solid rgba(0,0,0,.06);
+}
+
+.quantity-input{
+    max-width:90px;
+}
+
+.cart-total-box{
+    background:#fff6fb;
+    min-width:260px;
+    border:1px solid rgba(214,51,132,.12);
+}
+
+.empty-cart-img{
+    width:160px;
+    max-width:100%;
+}
+
+.card{
+    backdrop-filter: blur(4px);
+}

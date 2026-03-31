@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+<rect width="100%" height="100%" rx="24" fill="#fff8f2"/>
+<path d="M145 240 C150 204 145 165 142 120" stroke="#4a9f54" stroke-width="6" fill="none"/>
+<path d="M190 240 C190 204 190 165 190 118" stroke="#4a9f54" stroke-width="6" fill="none"/>
+<path d="M240 240 C236 205 237 162 240 115" stroke="#4a9f54" stroke-width="6" fill="none"/>
+<g transform="translate(110 58)">
+  <circle cx="30" cy="30" r="12" fill="#ff7aa8"/>
+  <circle cx="47" cy="30" r="12" fill="#ff7aa8"/>
+  <circle cx="38.5" cy="15" r="12" fill="#ffa2c1"/>
+  <circle cx="38.5" cy="45" r="12" fill="#ffa2c1"/>
+  <circle cx="38.5" cy="30" r="10" fill="#ffd75e"/>
+</g>
+<g transform="translate(160 50)">
+  <circle cx="30" cy="30" r="12" fill="#ffd34d"/>
+  <circle cx="47" cy="30" r="12" fill="#ffd34d"/>
+  <circle cx="38.5" cy="15" r="12" fill="#ffe381"/>
+  <circle cx="38.5" cy="45" r="12" fill="#ffe381"/>
+  <circle cx="38.5" cy="30" r="10" fill="#7b4a12"/>
+</g>
+<g transform="translate(210 56)">
+  <circle cx="30" cy="30" r="12" fill="#c99af5"/>
+  <circle cx="47" cy="30" r="12" fill="#c99af5"/>
+  <circle cx="38.5" cy="15" r="12" fill="#ddb9ff"/>
+  <circle cx="38.5" cy="45" r="12" fill="#ddb9ff"/>
+  <circle cx="38.5" cy="30" r="10" fill="#ffd75e"/>
+</g>
+<text x="24" y="278" font-family="Segoe UI, Arial" font-size="24" fill="#d27b38" font-weight="700">Bouquet Primaveral</text>
+</svg>
